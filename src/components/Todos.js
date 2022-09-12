@@ -43,17 +43,29 @@ const Todos = () => {
             setAddTodo('');
         })
     }
+    const onComplete = (id) => {
+        console.log("first", todos)
+        const editedTodoList = [...todos];
+        let completedTodoItem = editedTodoList.find((item) => item.id === id);
+        completedTodoItem.isCompleted = !completedTodoItem.isCompleted;
+        console.log("second", editedTodoList);
+        // console.log('m', completedTodoCopy);
 
+        // console.log('deneme', editedTodoList);
 
-    return <div>
+        setTodos(editedTodoList);
+    }
+
+    return <div className='container'>
         <form>
-            <input value={addTodo} onChange={(e) => setAddTodo(e.target.value)} />
-            <button onClick={handleAddTodo}>Add</button>
+            <h1 className='title'>TODOS</h1>
+            <input className='add-input' value={addTodo} onChange={(e) => setAddTodo(e.target.value)} />
+            <button className='add-btn' onClick={handleAddTodo}>Add</button>
         </form>
         <ul > {
-            todos.map(todo =>
+            todos.map((todo) =>
                 <li key={todo.id}>
-                    <TodoItem data={todo} onDelete={handleDelete} onEdit={handleEdit} />
+                    <TodoItem data={todo} onDelete={handleDelete} onEdit={handleEdit} onComplete={onComplete} />
                 </li>
             )
         }
