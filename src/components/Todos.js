@@ -47,7 +47,8 @@ const Todos = () => {
             setError("")
         }
         else {
-            setError("The input field must have more than three characters!")
+            setError("The input field must have more than three valid characters!");
+            setAddTodo('');
         }
     }
     const onComplete = (id) => {
