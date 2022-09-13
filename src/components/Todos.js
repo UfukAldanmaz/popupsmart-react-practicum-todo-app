@@ -36,7 +36,8 @@ const Todos = () => {
 
     const handleAddTodo = (e) => {
         e.preventDefault()
-        if (addTodo.length > 3) {
+
+        if (addTodo.trim().length > 3) {
             axios.post(`https://6317245a82797be77ff48a60.mockapi.io/todos/`, {
                 content: addTodo
             }).then((response) => {
@@ -47,7 +48,6 @@ const Todos = () => {
         }
         else {
             setError("The input field must have more than three characters!")
-
         }
     }
     const onComplete = (id) => {
