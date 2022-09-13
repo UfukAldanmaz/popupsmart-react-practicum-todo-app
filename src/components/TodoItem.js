@@ -2,7 +2,7 @@ import { useState, useLayoutEffect, useRef, useEffect } from 'react';
 import axios from 'axios';
 import '../style.css'
 
-const TodoItem = ({ index, data, onDelete, onEdit, onComplete }) => {
+const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
     const [loading, setLoading] = useState(false);
     const [editingContent, setEditingContent] = useState('');
     const [inEditMode, setInEditMode] = useState(false);
@@ -34,7 +34,6 @@ const TodoItem = ({ index, data, onDelete, onEdit, onComplete }) => {
     }
 
     const handleEditTodo = () => {
-
         if (inEditMode) {
             axios.put(url,
                 {
@@ -55,7 +54,7 @@ const TodoItem = ({ index, data, onDelete, onEdit, onComplete }) => {
 
     useEffect(() => {
         editInput.current.focus()
-    }, [handleEditTodo])
+    }, [inEditMode])
 
     const handleComplete = () => {
         if (inEditMode) {
@@ -68,13 +67,11 @@ const TodoItem = ({ index, data, onDelete, onEdit, onComplete }) => {
 
     return (
         <>
-
             <input type="text" readOnly={!inEditMode} className='read-mode' ref={editInput}
                 value={editingContent}
                 onChange={(e) => setEditingContent(e.target.value)}
                 onClick={() => handleComplete()}
             />
-            {/* <input type="checkbox" disabled={inEditMode} /> */}
             <button onClick={() => handleEditTodo()} className={inEditMode ? 'save-btn' : 'edit-btn'}>{inEditMode ? "Save" : "Edit"}</button>
             <button disabled={loading} className={loading ? 'loading-del-btn' : 'delete-btn'} onClick={() => deleteTodo(data.id)}>{loading ? 'Deleting...' : 'Delete'}</button>
         </>);
