@@ -36,12 +36,14 @@ form {
 
 
 .read-mode {
+    margin: 10px;
+
     border: none;
     background: none;
-    width: 300px;
-    height: 30px;
+    width: 400px;
+    height: 25px;
     border-bottom: 1px solid #c8c8c8;
-    padding: 10px;
+    padding: 15px;
 }
 
 .read-mode:focus {
@@ -49,12 +51,13 @@ form {
 }
 
 .edit-mode {
+    margin: 10px;
     border: none;
     background: none;
-    width: 300px;
-    height: 30px;
+    width: 400px;
+    height: 25px;
     border-bottom: 1px solid #c8c8c8;
-    padding: 10px;
+    padding: 15px;
 }
 
 
@@ -118,4 +121,29 @@ li {
     cursor: pointer;
     color: #fff;
 
+}
+
+/* .todo-item-from {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.todo-item-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.todo-item-input-error {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-error {
+    font-size: smaller;
+    color: #c8c8c8;
 }
