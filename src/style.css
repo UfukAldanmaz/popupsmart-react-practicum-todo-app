@@ -2,9 +2,9 @@ form {
     margin: 50px;
 }
 
-input[disabled] {
+/* input[disabled] {
     pointer-events: none
-}
+} */
 
 .title {
     color: #d8d8d8;
