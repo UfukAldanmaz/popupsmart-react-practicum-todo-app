@@ -1,6 +1,7 @@
 import { useState, useLayoutEffect, useRef, useEffect } from 'react';
 import axios from 'axios';
 import '../style.css'
+// import Edit from '../assets/images/edit.png'
 
 const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
     const [loading, setLoading] = useState(false);
@@ -37,7 +38,7 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
 
     const handleEditTodo = () => {
         if (inEditMode) {
-            editingContent.trim().length > 3 ?
+            editingContent.trim().length > 2 ?
                 axios.put(url,
                     {
                         content: editingContent
@@ -46,11 +47,10 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
                     .then((response) => {
                         setInEditMode(false);
                         onEdit(response.data)
-
                         editInput.current.className = "read-mode";
                         setError("")
 
-                    }) : setError("The field must have more than three valid characters!")
+                    }) : setError("The field must have three valid characters at least!")
             // setIsValid(true)
         } else {
             setInEditMode(true);
@@ -76,6 +76,7 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
             <div className='todo-item-row'>
                 <div className='todo-item-input-error'>
                     <input type="text" readOnly={!inEditMode}
+                        // disabled={loading}
                         className='read-mode' ref={editInput}
                         value={editingContent}
                         onChange={(e) => setEditingContent(e.target.value)}
@@ -83,8 +84,8 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
                     <span className='edit-error'>{error}</span></div>
                 <button onClick={() => handleEditTodo()}
                     className={inEditMode ? 'save-btn' : 'edit-btn'}
-                    disabled={loading}>
-                    {inEditMode ? "Save" : "Edit"}</button>
+                    disabled={loading || data.isCompleted}>
+                    {inEditMode ? "Save" :  /*<img src={Edit} alt="edit" />*/"Edit"}</button>
                 <button disabled={loading}
                     className={loading ? 'loading-del-btn' : 'delete-btn'}
                     onClick={() => deleteTodo(data.id)}>
