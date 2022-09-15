@@ -1,49 +1,59 @@
-form {
-    margin: 50px;
-}
+/* form {
+    margin-top: 50px;
+    background-color: #FFFF8F;
+} */
 
 /* input[disabled] {
     pointer-events: none
 } */
 
+
 .title {
-    color: #d8d8d8;
+    color: #fff;
+    text-shadow: 2px 2px #a9a9a9;
+    margin-top: 50px;
 }
 
 .add-input {
-    border: 1px solid #c8c8c8;
+    border: none;
     width: 350px;
-    height: 40px;
-    border-radius: 15px;
-    margin: 10px;
+    height: 30px;
+    padding: 5px;
+    /* border-radius: 15px; */
 }
 
+.add-input:focus {
+    outline: none;
+}
 
 
 .add-btn {
     border: none;
     width: 100px;
     height: 40px;
-    background-color: rgb(103, 241, 241);
-    border-radius: 15px;
+    background-color: #AFDBF5;
+    /* border-radius: 15px; */
     color: #fff;
     cursor: pointer;
+    font-weight: bolder;
 }
 
 .add-btn:hover {
-    background-color: rgb(21, 208, 208);
+    background-color: #79c7f5;
 }
 
 
 .read-mode {
     margin: 10px;
-
+    font-size: large;
     border: none;
     background: none;
     width: 400px;
     height: 25px;
-    border-bottom: 1px solid #c8c8c8;
-    padding: 15px;
+    border-bottom: 1px solid #b5651d;
+    padding: 5px;
+    color: #b2adad;
+    /* text-shadow: 1px 1px #464444; */
 }
 
 .read-mode:focus {
@@ -52,25 +62,27 @@ form {
 
 .edit-mode {
     margin: 10px;
+    font-size: large;
     border: none;
     background: none;
     width: 400px;
     height: 25px;
-    border-bottom: 1px solid #c8c8c8;
-    padding: 15px;
+    border-bottom: 1px solid #b5651d;
+    padding: 5px;
+    color: #b2adad;
+
+
 }
 
-
-
-li {
-    list-style-type: none;
+.edit-mode:focus {
+    outline: none;
 }
+
 
 .save-btn {
     background-color: rgb(141, 251, 141);
     margin: 5px;
     border: none;
-    border-radius: 15px;
     width: 75px;
     height: 40px;
     cursor: pointer;
@@ -81,15 +93,30 @@ li {
     background-color: rgb(14, 241, 14);
 }
 
+.save-btn:disabled {
+    background-color: #d8d8d8;
+}
+
 .edit-btn {
     background-color: rgb(137, 137, 254);
     margin: 5px;
     border: none;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     width: 75px;
     height: 40px;
     cursor: pointer;
     color: #fff;
+}
+
+.edit-btn:disabled {
+    background-color: #c8c8c8;
+}
+
+.edit-btn:disabled:hover {
+    cursor: not-allowed;
+    background-color: #c8c8c8;
+
+
 }
 
 .edit-btn:hover {
@@ -99,7 +126,6 @@ li {
 .delete-btn {
     margin: 5px;
     border: none;
-    border-radius: 15px;
     width: 75px;
     height: 40px;
     background-color: tomato;
@@ -112,14 +138,14 @@ li {
 }
 
 .loading-del-btn {
-    background-color: rgb(248, 51, 17);
+    background-color: #c8c8c8;
     margin: 5px;
     border: none;
-    border-radius: 15px;
     width: 75px;
     height: 40px;
     cursor: pointer;
     color: #fff;
+    cursor: not-allowed;
 
 }
 
@@ -131,19 +157,172 @@ li {
 } */
 
 .todo-item-row {
+    /* width: fit-content; */
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
+    /* border: 1px solid #c8c8c8; */
 }
 
 .todo-item-input-error {
     display: flex;
     flex-direction: column;
+    /* position: relative;
+    display: inline-block; */
 }
 
 .edit-error {
+    /* visibility: hidden;
+    width: 320px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    /* position: absolute;
+    z-index: 1; */
+    height: 10px;
     font-size: smaller;
-    color: #c8c8c8;
+    color: #a9a9a9;
+
+}
+
+/* .todo-item-input-error:hover .edit-error {
+    visibility: visible;
+} */
+
+.container {
+
+    margin-top: 70px;
+    margin-bottom: 50px;
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFF8F;
+    margin: auto;
+    width: 700px;
+}
+
+ul {
+    padding: 50px;
+}
+
+.form-container {
+
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 600px;
+}
+
+.add-error {
+    color: #a9a9a9;
+    height: 5px;
+}
+
+li {
+    padding: 5px;
+    list-style-type: none;
+}
+
+.listing-btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.listing-btn {
+    margin: 10px 10px 50px 10px;
+    background-color: #FFD700;
+    border: none;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+.listing-btn:hover {
+    box-shadow: 3px 4px rgba(0%, 0%, 0%, 0.1);
+}
+
+/* .listing-btn:active {
+    background-color: rgba(0%, 0%, 0%, 0.3);
+
+} */
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.theme-btn {
+    position: absolute;
+    float: right;
+    font-size: xx-large;
+    top: 20px;
+    right: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.welcome {
+    position: absolute;
+    top: 5px;
+    color: #b2adad;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #FFFF8F;
+    margin: auto;
+    width: 600px;
+    height: 250px;
+    margin-top: 100px;
+
+}
+
+.login-column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.login-text {
+    color: #a9a9a9;
+    margin: 10px;
+}
+
+.login-input {
+    width: 300px;
+    height: 20px;
+    margin: 10px;
+}
+
+.login-btn {
+    margin: 30px 0 10px 0;
+    width: 150px;
+    height: 50px;
+
+}
+
+.login-error {
+    margin-top: 0;
+    font-size: small;
+    height: 5px;
+    color: red;
 }
