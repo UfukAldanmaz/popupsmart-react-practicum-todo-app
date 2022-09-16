@@ -5,14 +5,14 @@ const ThemeContext = createContext({});
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
     const toggleTheme = () => {
-        theme === 'light' ? setTheme('dark') : setTheme('light')
+        theme === 'light' ? setTheme('dark') : setTheme('light');
     }
 
     useEffect(() => {
         localStorage.setItem('theme', theme);
         document.body.style.backgroundColor = theme === 'dark' ? 'rgb(32, 31, 31)' : '';
         let column = document.getElementById('column');
-        column.style.backgroundColor = theme === 'dark' ? 'black' : '';
+        column.style.background = theme === 'dark' ? 'black' : '';
     }, [theme])
 
 
