@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Todos from './components/Todos';
 import Login from './components/Login';
@@ -10,15 +10,13 @@ function App() {
   return (
     <div className='App'>
       <ThemeProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/todos" element={<Todos />} />
           </Routes>
-        </BrowserRouter>
-
+        </HashRouter>
       </ThemeProvider>
-
     </div>
   );
 }
