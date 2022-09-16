@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/popupsmart-react-practicum-todo-app/static/css/main.bb0f1383.css",
+    "main.js": "/popupsmart-react-practicum-todo-app/static/js/main.09e26840.js",
+    "static/js/787.91b3ec08.chunk.js": "/popupsmart-react-practicum-todo-app/static/js/787.91b3ec08.chunk.js",
+    "index.html": "/popupsmart-react-practicum-todo-app/index.html",
+    "main.bb0f1383.css.map": "/popupsmart-react-practicum-todo-app/static/css/main.bb0f1383.css.map",
+    "main.09e26840.js.map": "/popupsmart-react-practicum-todo-app/static/js/main.09e26840.js.map",
+    "787.91b3ec08.chunk.js.map": "/popupsmart-react-practicum-todo-app/static/js/787.91b3ec08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb0f1383.css",
+    "static/js/main.09e26840.js"
+  ]
+}
