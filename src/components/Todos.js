@@ -73,7 +73,6 @@ const Todos = () => {
         const editedTodoList = [...todos];
         let completedTodoItem = editedTodoList.find((item) => item.id === id);
         completedTodoItem.isCompleted = !completedTodoItem.isCompleted;
-        console.log("second", editedTodoList);
 
         setTodos(editedTodoList);
     }
