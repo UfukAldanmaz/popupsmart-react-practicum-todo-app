@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Todos from './components/Todos';
