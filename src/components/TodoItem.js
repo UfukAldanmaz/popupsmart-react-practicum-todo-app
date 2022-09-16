@@ -18,7 +18,6 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
     }, [data])
 
     useLayoutEffect(() => {
-        console.log("le", data.isCompleted);
 
         editInput.current.style.textDecoration = data.isCompleted ? 'line-through' : '';
 
