@@ -2,6 +2,8 @@ Live site: https://ufukaldanmaz.github.io/popupsmart-react-practicum-todo-app/
 
 Used Context API for theme. Theme preference is stored in the localstorage. The app contains all CRUD operations and users can filter todo list when they complete todos. After entering a random username, users can enter the homepage. Username is stored in the localstorage. Also, used react router dom.
 
+Used MockAPI. 
+
 ![Ekran Resmi 2022-09-16 13 24 13](https://user-images.githubusercontent.com/61687476/190619544-54f27ca9-1c46-443c-b922-54cee7a8e948.png)
 ![Ekran Resmi 2022-09-16 13 30 58](https://user-images.githubusercontent.com/61687476/190619623-5df816ff-cb19-4cee-a0d7-129c8b6cee9f.png)
 ![Ekran Resmi 2022-09-16 13 24 34](https://user-images.githubusercontent.com/61687476/190619636-9d553908-da21-4555-9db1-1d69b3a02264.png)
