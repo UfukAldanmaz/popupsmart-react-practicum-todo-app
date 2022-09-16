@@ -1,14 +1,12 @@
 import { useState, useLayoutEffect, useRef, useEffect } from 'react';
 import axios from 'axios';
 import '../style.css'
-// import Edit from '../assets/images/edit.png'
 
 const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
     const [loading, setLoading] = useState(false);
     const [editingContent, setEditingContent] = useState('');
     const [inEditMode, setInEditMode] = useState(false);
     const [error, setError] = useState("");
-    // const [isValid, setIsValid] = useState(false);
 
     const url = `https://6317245a82797be77ff48a60.mockapi.io/todos/${data.id}`;
 
@@ -51,7 +49,6 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
                         setError("")
 
                     }) : setError("The field must have three valid characters at least!")
-            // setIsValid(true)
         } else {
             setInEditMode(true);
             editInput.current.className = "edit-mode";
@@ -59,6 +56,9 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
     }
 
     useEffect(() => {
+        if (!inEditMode) {
+            return;
+        }
         editInput.current.focus()
     }, [inEditMode])
 
@@ -76,7 +76,6 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
             <div className='todo-item-row'>
                 <div className='todo-item-input-error'>
                     <input type="text" readOnly={!inEditMode}
-                        // disabled={loading}
                         className='read-mode' ref={editInput}
                         value={editingContent}
                         onChange={(e) => setEditingContent(e.target.value)}
@@ -85,7 +84,7 @@ const TodoItem = ({ data, onDelete, onEdit, onComplete }) => {
                 <button onClick={() => handleEditTodo()}
                     className={inEditMode ? 'save-btn' : 'edit-btn'}
                     disabled={loading || data.isCompleted}>
-                    {inEditMode ? "Save" :  /*<img src={Edit} alt="edit" />*/"Edit"}</button>
+                    {inEditMode ? "Save" : "Edit"}</button>
                 <button disabled={loading}
                     className={loading ? 'loading-del-btn' : 'delete-btn'}
                     onClick={() => deleteTodo(data.id)}>
